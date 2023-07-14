@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // kiểm tra đối xứng
+    function isPalindrome(string){
+            if(string[0]===string[string.length-1]&&string[1]===string[string.length-2]){
+                if(string[string.length/2]===string[(string.length/2)-1]) {
+                    return true;
+                }else{
+                    return false
+                }
+            }else {
+                return false;
+            }
+    }
+    let a=prompt()
+    console.log(isPalindrome(a.toLowerCase()))
+
+</script>
+</body>
+</html>

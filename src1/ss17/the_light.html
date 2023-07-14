@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+class CongTac{
+    constructor(name) {
+        this.name=name;
+        this.turn=true;
+    }
+    getName(){
+        return this.name;
+    }
+    setName(name){
+        this.name=name;
+    }
+    switchOn(){
+        return this.turn;
+    }
+}
+class BongDen{
+    constructor(name) {
+        this.name=name;
+    }
+    getName(){
+        return this.name;
+    }
+    setName(name){
+        this.name=name;
+    }
+    TurnOn(turnOn){
+        if(turnOn.switchOn()){
+            console.log("công tắc đã bật")
+            console.log("đèn sáng")
+        }else{
+            console.log("công tắc đã tắt")
+            console.log("đèn tắt")
+        }
+    }
+}
+let bongDen=new  BongDen("The light")
+let congTac=new CongTac("The switch")
+bongDen.TurnOn(congTac)
+</script>
+</body>
+</html>

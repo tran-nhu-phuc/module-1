@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="met" placeholder="Meter">
+<button onclick="add()">add</button>
+</br>
+<p id="result"></p>
+<script>
+    function  add(){
+        let M=document.getElementById("met").value;
+        if(M!==""){
+            document.getElementById("result").innerHTML=(M *3.2808)+" feet "
+        }else{
+            alert("nhập lại")
+        }
+    }
+</script>
+</body>
+</html>

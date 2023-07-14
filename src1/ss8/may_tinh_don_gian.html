@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input id="result" >
+    <p id="result1"></p>
+    <table border="1" width="19%">
+        <tr>
+            <td><input type="button" placeholder="1" onclick="disPlay1('1')"value="1"></td>
+            <td><input type="button" placeholder="2" onclick="disPlay1('2')"value="2"></td>
+            <td><input type="button" placeholder="3" onclick="disPlay1('3')"value="3"></td>
+        </tr>
+        <tr>
+            <td><input type="button" placeholder="4" onclick="disPlay1('4')"value="4"></td>
+            <td><input type="button" placeholder="5" onclick="disPlay1('5')"value="5"></td>
+            <td><input type="button" placeholder="6" onclick="disPlay1('6')"value="6"></td>
+        </tr>
+        <tr>
+            <td><input type="button" placeholder="7" onclick="disPlay1('7')"value="7"></td>
+            <td><input type="button" placeholder="8" onclick="disPlay1('8')"value="8"></td>
+            <td><input type="button" placeholder="9" onclick="disPlay1('9')"value="9"></td>
+        </tr>
+        <tr>
+            <td><input type="button" placeholder="0" onclick="disPlay1('0')"value="0" ></td>
+            <td><input type="button" placeholder="C" onclick="reSet('C')"value="C"></td>
+            <td><input type="button" placeholder="=" onclick="calCuLaTor('=')"value="="></td>
+        </tr>
+    </table>
+</form>
+<script>
+    function disPlay1(value){
+       document.getElementById("result").value+=value
+    }
+    function reSet(){
+        document.getElementById("result").value="";
+    }
+    function calCuLaTor(){
+        let a=document.getElementById("result").value;
+        document.getElementById("result1").innerHTML=a
+    }
+
+</script>
+</body>
+</html>

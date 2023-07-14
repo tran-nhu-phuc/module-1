@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //tạo bảng cửu chương
+    let Bang='<table border="1">'
+    for (let i = 0; i <10 ; i++) {
+        Bang+='<tr>'
+        for (let j = 0; j <10 ; j++) {
+            Bang+='<td>'+i + " x " + j + " = " + (i*j) + '</td>'
+        }
+        Bang+='</tr>'
+    }
+    Bang+='</table>'
+    document.write(Bang)
+</script>
+</body>
+</html>

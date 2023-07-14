@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a=parseInt(prompt("nhập a"))
+    let b=parseInt(prompt("nhập b"))
+    let c=parseInt(prompt("nhập c"))
+    let TamGiac=(b*2)-(4*a*c)
+    if(TamGiac<0){
+        alert("phương trình vô nghiệm")
+    }else if(TamGiac===0){
+        alert("phương trình có 2 nghiệm kép x1,x2= "+(-b/(2*a)) )
+    }else if(TamGiac>0){
+        alert("X1 = "+(-b-(TamGiac/TamGiac))/(2*a)+" và X2 = "+(-b+(TamGiac/TamGiac))/2*a)
+    }
+</script>
+</body>
+</html>

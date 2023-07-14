@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr1=prompt("enter words")
+    let arr2=prompt("enter words")
+    let arr=arr1.concat(arr2)
+    let arr3=[]
+    let arr4=[]
+    for (let i = 0; i <arr.length ; i++) {
+        if(!arr3.includes(arr[i])){
+            arr4.push(arr[i])
+        }else{
+            arr3.push(arr[i])
+        }
+    }
+console.log(arr3)
+</script>
+</body>
+</html>

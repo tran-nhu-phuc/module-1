@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//tổng 30 số tự nhiên chia hết cho 7
+    let index=0;
+    let a;
+    let sum=0
+    for (let i = 0; i <1000 ; i++) {
+         a=i
+        if(i%7===0){
+            index++;
+        }
+        if(a%7===0&&index<=30){
+            sum+=a;
+        }
+    }
+    console.log(sum)
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let kiemTra=parseInt(prompt("nhập điểm bài kiểm tra"))
+    let DiemThiGiuaKy=parseInt(prompt("nhập điểm thi giữa kỳ"))
+    let DiemThiCuoiKy=parseInt(prompt("nhập điểm thi cuối kỳ"))
+    if(kiemTra>=5&&DiemThiCuoiKy>=5&&DiemThiGiuaKy>=5){
+        alert("học sinh khá")
+    }else if(kiemTra>=8&&DiemThiGiuaKy>=8&&DiemThiCuoiKy>=8){
+        alert("học sinh giỏi")
+    }else{
+        alert("học sinh trung bình")
+    }
+</script>
+</body>
+</html>

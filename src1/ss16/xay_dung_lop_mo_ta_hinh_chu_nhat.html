@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class calculator{
+        constructor(ChieuDai,ChieuRong) {
+            this.ChieuDai=ChieuDai;
+            this.ChieuRong=ChieuRong;
+        }
+        getChieuDai(){
+            return this.ChieuDai;
+        }
+        getChieuRong(){
+            return this.ChieuRong;
+        }
+        setChieuDai(CD){
+            this.ChieuDai=CD;
+        }
+        setChieuRong(CR){
+            this.ChieuRong=CR;
+        }
+        ChuVi(){
+            return (this.ChieuDai+this.ChieuRong)*2
+        }
+        DienTich(){
+            return (this.ChieuRong*this.ChieuDai)
+        }
+    }
+    let cal=new calculator(10,9)
+    console.log("chiều dài : " +cal.getChieuDai())
+    console.log("chiều rộng : "+cal.getChieuRong())
+    console.log("chu vi : "+cal.ChuVi())
+    console.log("diện tích : "+cal.DienTich())
+    cal.setChieuDai(3)
+    cal.setChieuRong(6)
+    console.log("sau khi được thay đổi ")
+    console.log("chiều dài : " +cal.getChieuDai())
+    console.log("chiều rộng : "+cal.getChieuRong())
+    console.log("chu vi : "+cal.ChuVi())
+    console.log("diện tích : "+cal.DienTich())
+
+
+</script>
+</body>
+</html>

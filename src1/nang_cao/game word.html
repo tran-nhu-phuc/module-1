@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="f">
+<textarea type="text" rows ="20" cols="60"  name ="txt" onkeydown="typeTextarea()"></textarea>
+</form>
+<script>
+    let a =new Array(),n="";
+    a[1]="T"; a[2] = "R" ;a[3]="A";a[4]="N";a[5]=" ";a[6]="N"; a[7]= "H";a[8]="U";a[9]=" "; a[10]= "P";a[11]="H"
+    ;a[12]="U";a[13]="C",a[14]="!";
+    function typeTextarea()
+    {
+        b = document.f.txt.value;
+        j = b.length;
+        if (j>0)
+        {
+            for (let i = 1; i <=j ; i++)
+            {
+                n = n+ a[i];
+                if(i == 15)
+                {
+                    document.f.txt.value="";
+                    n="";
+                }
+            }
+        }
+        document.f.txt.value = n;
+        n="";
+        setTimeout("typeTextarea()",1)
+    }
+</script>
+</body>
+</html>

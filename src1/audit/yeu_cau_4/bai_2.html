@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a=prompt()
+    let arr=[]
+    let arr1=[]
+    for (let i = 0; i <a.length ; i++) {
+        if(!arr.includes(a[i])) {// nếu chưa có trong arr[] thì đẩy vào
+            arr.push(a[i])
+        }else{
+            arr1.push(a[i])//lấy ra ký tụ giống nhau
+        }
+    }
+    console.log(arr)
+</script>
+</body>
+</html>

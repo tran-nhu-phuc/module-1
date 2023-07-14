@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Stopwatch</h1>
+<h2>Vanilla JavaScript Stopwatch</h2>
+<span id="min">00</span>:</span><span id ="seconds">00</span>:<span id ="milliseconds">00</span>
+</br>
+</br>
+<button id="start">Start</button>
+    <button id ="stop">Stop</button>
+    <button id ="reset">Reset</button>
+<script>
+    window.onload= function display(){
+        let giay=0.0;
+        let miligiay=0.0;
+        let phut=0
+        let min=document.getElementById("min");
+        let seconds=document.getElementById("seconds");
+        let milliseconds=document.getElementById("milliseconds");
+        let start=document.getElementById("start");
+        let stop=document.getElementById("stop");
+        let reset=document.getElementById("reset");
+        let Interval;
+        start.onclick=function (){
+            clearInterval(Interval);
+            Interval=setInterval(inside,10);
+
+    }
+
+        stop.onclick=function (){
+            clearInterval(Interval);
+    }
+
+        reset.onclick=function (){
+            clearInterval(Interval);
+            miligiay="00";
+            giay="00";
+            milliseconds.innerHTML=miligiay;
+            seconds.innerHTML=giay;
+
+    }
+
+        function inside(){
+            miligiay++;
+
+            if(miligiay<=9){
+                milliseconds.innerHTML="0"+miligiay;
+            }
+
+            if (miligiay>9){
+                milliseconds.innerHTML=miligiay;
+            }
+
+            if(miligiay>=99){
+                console.log("seconds");
+                giay++;
+                seconds.innerHTML="0" + giay;
+                miligiay = 0;
+                milliseconds.innerHTML="0" + 0;
+            }
+
+            if(giay>9){
+                seconds.innerHTML=giay;
+            }
+            if(phut>59){
+                console.log("hours")
+                phut++
+                min.innerHTML="0"+gio
+                giay=0
+                seconds.innerHTML="0"+0
+                miligiay=0
+                milliseconds.innerHTML="0" + 0
+            }
+        }
+}
+</script>
+</body>
+</html>

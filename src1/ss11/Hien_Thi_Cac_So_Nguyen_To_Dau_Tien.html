@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //hiển thị 10 số nguyên tố đầu tiên
+    let Numbers=0;
+    let N=2;
+   while (Numbers<=10){
+        let count=0;
+        for (let i = 2; i <N ; i++) {
+           if(N%i==0){
+               count++;
+           }
+       }
+       if(count==0){
+           console.log(N+",")
+           Numbers++;
+       }
+       N++;
+    }
+</script>
+</body>
+</html>

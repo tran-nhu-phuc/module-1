@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" placeholder="Nhập độ C" id="doc" >
+<button onclick="add()">add</button></br>
+<p id="result"></p>
+<script>
+   function add(){
+       let C=document.getElementById("doc").value;
+       if(C!==""){
+           document.getElementById("result").innerHTML= (C*(9/5)+32)+  " độ F "
+       }else{
+           alert("nhập lại")
+       }
+   }
+</script>
+</body>
+</html>

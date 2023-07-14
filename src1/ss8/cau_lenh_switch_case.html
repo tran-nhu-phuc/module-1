@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let month=parseInt(prompt("nhập tháng mà bạn muốn tìm"))//nhập tháng muốn tìm
+    let year=parseInt(prompt("nhập năm mà bạn muốn tìm"))//nhập năm muốn tìm
+        switch (month) {
+            case 1:
+                console.log("tháng 1 này có 31 ngày")
+                break;
+            case 3:
+                console.log("tháng 3 này có 31 ngày")
+                break;
+            case 5:
+                console.log("tháng 5 này có 31 ngày")
+                break;
+            case 7:
+                console.log("tháng 7 này có 31 ngày")
+                break;
+            case 8:
+                console.log("tháng 8 này có 31 ngày")
+                break;
+            case 10:
+                console.log("tháng 10 này có 31 ngày")
+                break;
+            case 12:
+                console.log("tháng 12 này có 31 ngày")
+                break;
+            case 2:
+                if(year%4===0||year%400===0){//công thức tìm năm nhuận tháng 2
+                    console.log("tháng 2 năm nay có 28 ngày")
+                }else{
+                    console.log("tháng 2 năm nay có 29 ngày")
+                }
+                break;
+            case 4:
+                console.log("tháng 4 này có 30 ngày")
+                break;
+            case 6:
+                console.log("tháng 6 này có 30 ngày")
+                break;
+            case 9:
+                console.log("tháng 9 này có 30 ngày")
+                break;
+            default:
+                console.log("tháng 11 này có 30 ngày")
+                break;
+        }
+</script>
+</body>
+</html>

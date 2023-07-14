@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let SoLuong=parseInt(prompt("nhập số tiền  mà bạn đã bán được"))//nhập số tiền đã bán được
+  if(SoLuong<100){
+      alert("số tiền bạn nhận được là " + ((SoLuong*3)/100)+"k")//nếu nhỏ hơn 100 nhận được 3%
+  }else if(SoLuong>=100){
+      alert("số tiền bạn nhận được là " + ((SoLuong*5)/100)+"k")//nếu lớn hơn hoặc bằng 100 nhận được 5%
+  }else if(SoLuong>=150){
+      alert("số tiền bạn nhận được là " +((SoLuong*10)/100)+"k")//nếu lớn hơn hoặc bằng 150 nhận được 10%
+  }else{
+      alert("số tiền mà bạn nhận được là " +((SoLuong*15)/100)+"k")//nếu lớn hơn hoặc bằng 250 nhận được 15%
+  }
+</script>
+</body>
+</html>

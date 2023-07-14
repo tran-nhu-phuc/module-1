@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Amount</label>
+<input id="tien" >
+<label>From Currency</label>
+<select id="a">
+    <option>VND</option>
+    <option>USD</option>
+</select>
+<label>To Currency</label>
+<select id="b">
+    <option>USD</option>
+    <option>VND</option>
+</select>
+<button onclick="Convert()">
+Convert
+</button>
+<p id="result"></p>
+<script>
+    //chuyen doi  tien te
+    function Convert(){
+        let tien1=document.getElementById("tien").value;
+        let tien2=document.getElementById("a").value;
+        let tien3=document.getElementById("b").value;
+        if(tien2==="USD"&&tien3==="VND"){
+            document.getElementById("result").innerHTML=("result : "+(tien1*24000)+"vnd")
+        }else if(tien2==="VND"&&tien3==="USD"){
+            document.getElementById("result").innerHTML=("result : "+(tien1/24000)+"$")
+        }else{
+            alert("Enter comback")
+        }
+    }
+</script>
+</body>
+</html>

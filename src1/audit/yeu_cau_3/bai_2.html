@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //tim ky tu khac nhau
+    let arr1=(prompt())
+    let arr2=(prompt())
+    let arr=[]
+    for (let i = 0; i <arr1.length ; i++) {
+        if(arr2.indexOf(arr1[i])===-1){
+            arr.push(arr1[i])
+        }
+    }
+    for (let i = 0; i <arr2.length ; i++) {
+        if(arr1.indexOf(arr2[i])===-1&&arr.indexOf(arr2[i])===-1){
+            arr.push(arr1[i])
+        }
+    }
+    console.log(arr.join(""))
+
+</script>
+</body>
+</html>

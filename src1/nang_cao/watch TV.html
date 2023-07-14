@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+<script>
+function showTime(){
+        let date=new Date()
+        let h=date.getHours()
+        let m=date.getMinutes()
+        let s=date.getSeconds()
+        let am="AM"
+        if(h===0){
+            h=12
+            am="PM"
+        }
+        if(h>12){
+            h=h-12
+        }
+        h = (h<10) ? "0" + h : h;
+        m = (m<10) ? "0" + m : m;
+        s = (s<10) ? "0" + s : s;
+    let time = h + ":" + m + ":" + s+" "+am ;
+    document.getElementById("MyClockDisplay").innerText = time;
+    setInterval(showTime,1000)
+}
+showTime()
+</script>
+</body>
+</html>

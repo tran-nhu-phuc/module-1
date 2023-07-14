@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //đếm từ trong mảng
+    function num1(str) {
+        let a=str.trim()
+        let words=a.split(" ")
+        console.log(words.join(" "))
+        return words.length;
+    }
+    let inputString = prompt("nhập từ");
+    let wordCount = num1(inputString);
+    console.log('Số từ trong chuỗi :', wordCount);
+</script>
+</body>
+</html>

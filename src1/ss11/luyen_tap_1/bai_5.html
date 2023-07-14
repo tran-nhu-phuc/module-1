@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //hiển thị tỏng 10 số libonacci đầu tiên
+    let a1=0;
+    let a2=1;
+    let b;
+    let sum=0;
+    for (let i = 0; i <10 ; i++) {
+        b=a1+a2;
+        a1=a2;
+        a2=b;
+        sum+=b
+    }
+    document.write(sum)
+</script>
+</body>
+</html>

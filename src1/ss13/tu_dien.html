@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="word" placeholder="Enter word">
+<input type="button" onclick="search()" value="search">
+<p id="result"></p>
+<script>
+    function  search(){
+        let word=document.getElementById("word").value;
+        let english=["hello","hi","welcome"]
+        let vietnam=["xin chào","chào","chào mừng"]
+        let index=-1
+        for (let i = 0; i <english.length ; i++) {
+           if(english[i]===word){
+               index=i
+           }
+        }
+        if(index!==-1){
+            document.getElementById("result").innerHTML=vietnam[index]
+        }else{
+            document.getElementById("result").innerHTML="ko tìm thấy"
+        }
+    }
+
+    // function  search(){
+    //     let word=document.getElementById("word").value;
+    //     let english=["hello","hi","welcome"]
+    //     let vietnam=["xin chào","chào","chào mừng"]
+    //     let index=-1
+    //     index = english.indexOf(word);
+    //     if(index!==-1){
+    //         document.getElementById("result").innerHTML=vietnam[index]
+    //     }else{
+    //         document.getElementById("result").innerHTML="ko tìm thấy"
+    //     }
+    // }
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class That{
+        constructor(name,weight,fast) {
+            this.name=name;
+            this.fast=fast;
+        }
+        getName(){
+            return this.name;
+        }
+        setName(name){
+            this.name=name;
+        }
+    }
+    class Mouse extends That{
+        constructor(name) {
+            super(name);
+            this.weight=10
+            this.dead=false;
+            this.fast=7;
+        }
+        say(){
+            console.log("I am a Mouse")
+        }
+    }
+    class Cat extends That{
+        constructor(name) {
+            super(name);
+            this.weight=20;
+            this.fast=10
+        }
+        say(){
+            console.log("I am a Cat")
+        }
+        eatMouse(rat,cat){
+            if(!rat.dead&&cat.fast>rat.fast){
+                console.log("mèo đã ăn được chuột")
+                rat.weight-=2;
+                cat.weight+=2;
+            }else{
+                console.log("mèo không bắt được chuột")
+            }
+        }
+    }
+    let mouse=new Mouse("rat")
+    let cat=new Cat("cat")
+    mouse.say()
+    cat.say()
+    cat.eatMouse(mouse,cat)
+    console.log(mouse.weight)
+    console.log(cat.weight)
+
+</script>
+</body>
+</html>

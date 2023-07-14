@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="result" >
+<input type="button" onclick="star()" value="add">
+<p id="enter"></p>
+<script>
+  function star(){
+      let arr1=[ "Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe" , "Regulus" ]
+      let arr2=[ "Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major" , "Leo"]
+      for (let i = 0; i <arr1.length ; i++) {
+          let a=document.getElementById("result").value;
+          if(a===arr1[i]){
+              document.getElementById("enter").innerHTML=arr2[i]
+          }
+      }
+
+  }
+</script>
+</body>
+</html>

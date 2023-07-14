@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="enter">
+<input type="button" placeholder="Enter number" value="add" onclick="GiaiThua()">
+<p id="result"></p>
+<script>
+    //tinh giai thua
+
+    function GiaiThua(){
+        let b=1;
+        let a=document.getElementById("enter").value;
+        for (let i = 1; i <=a ; i++) {
+               b*=i
+        }
+        document.getElementById("result").innerHTML= b
+    }
+</script>
+</body>
+</html>

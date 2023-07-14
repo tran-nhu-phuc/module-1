@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="bang1" placeholder="Nhập số thứ nhất">
+<input type="text" id="bang2" placeholder="Nhập số thứ hai">
+<button onclick="Addition()" >+</button>
+<button onclick="Subtraction()" >-</button>
+<button onclick="Multiplication()" >*</button>
+<button onclick="Division()" >/</button>
+</br>
+</br>
+
+ <p type="text" id ="output" ></p>
+<script>
+    let number1=document.getElementById("bang1");
+    let number2=document.getElementById("bang2");
+    let Addition1;
+    let Subtraction1;
+    let Multiplication1;
+    let Division1;
+    function Addition(){
+        Addition1= parseInt(number1.value) + parseInt(number2.value)
+        document.getElementById("output").innerHTML="kết quả : "+Addition1
+    }
+    function Subtraction() {
+        Subtraction1 = parseInt(number1.value) - parseInt(number2.value)
+        document.getElementById("output").innerHTML = "kết quả : "+Subtraction1
+    }
+    function Multiplication(){
+        Multiplication1=parseInt(number1.value) * parseInt(number2.value)
+        document.getElementById("output").innerHTML = "kết quả : "+Multiplication1
+    }
+    function Division(){
+        Division1=parseInt(number1.value) / parseInt(number2.value)
+        document.getElementById("output").innerHTML ="kết quả : "+Division1
+    }
+</script>
+</body>
+</html>

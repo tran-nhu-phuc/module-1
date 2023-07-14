@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let weight1=prompt("nhập cân nặng của bạn")//nhập cân nặng
+    let height1=prompt("nhập chiều cao của bạn")//chiều cao
+    function bmi(weight,height){
+        let bmi=weight/(height*height)//công thức BMI
+        console.log(bmi)
+        if(bmi<18.5){
+            return "Underweight";
+        }else if(bmi<25){
+            return "Normal";
+        }else if(bmi<30){
+            return "Overweight";
+        }else{
+            return "Obese"
+        }
+    }
+    console.log(bmi(weight1,height1))//cho ra kết quả
+
+</script>
+</body>
+</html>

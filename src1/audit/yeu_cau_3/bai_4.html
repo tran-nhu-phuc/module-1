@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    div{
+        padding: 3px;
+        border-style: none none double none;
+        width: 20%;
+    }
+    div:hover{
+        background-color: papayawhip;
+    }
+    button{
+        border-color: chartreuse;
+    }
+    button:hover{
+        background-color: yellow;
+    }
+    button:active{
+        color: greenyellow;
+        background-color: dodgerblue;
+    }
+    input{
+        border-color: lightgrey;
+    }
+</style>
+<body>
+<p id="result"></p>
+</br>
+<span>số lượng :</span>
+<br>
+<button onclick="many()">-</button>
+<input type="number" id="out" style="width: 50px" min="1" max="100" >
+<button onclick="player()">+</button>
+<br>
+<br>
+<p id="sum"></p>
+<br>
+<br>
+<button onclick="ok()">ok</button>
+<br>
+<br>
+<script>
+  let arr=[
+      "Cafe",
+    "Cam vắt",
+    "Nước ép cà rốt",
+    "Nước ép cà chua",
+   " Nước lọc",
+   " Nước dừa"
+  ]
+  let index=new Array(5);
+  index[0]=10;
+  index[1]=12;
+  index[2]=18;
+  index[3]=20;
+  index[4]=8;
+  index[5]=25;
+  let index1;
+  for (let i = 0; i <arr.length ; i++) {
+      document.write("<div><button onclick='play("+ i +")'>"+i+"</button>" + " : " +arr[i]+"</br></div>")
+  }
+  function ok(){
+          let a=document.getElementById("out").value;
+      document.getElementById("sum").innerHTML="Tổng tiền : " +(a*index[index1])+"k"
+  }
+function play(a){
+    for (let i = 0; i <arr.length ; i++) {
+        switch (a){
+            case 0:
+                document.getElementById("result").innerHTML=arr[0]+" : " + index[0]+"k"
+                break;
+            case 1:
+                document.getElementById("result").innerHTML=arr[1]+" : " + index[1]+"k"
+                break;
+            case 2:
+                document.getElementById("result").innerHTML=arr[2]+" : " + index[2]+"k"
+                break;
+            case 3:
+                document.getElementById("result").innerHTML=arr[3]+" : " + index[3]+"k"
+                break;
+            case 4:
+                document.getElementById("result").innerHTML=arr[4]+" : " + index[4]+"k"
+                break;
+            case 5:
+                document.getElementById("result").innerHTML=arr[5]+" : " + index[5]+"k"
+                break;
+        }
+        if(a===i){
+            index1=i
+        }
+    }
+}
+  let i=0
+  function many() {
+      document.getElementById("out").value=i--;
+  }
+  function player(){
+      document.getElementById("out").value=i++;
+  }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Viết một hàm chuẩn hóa xâu ký tự: biến đổi xâu ký tự thành xâu sao cho trong xâu không có 2 dấu cách liền nhau và bắt đầu mỗi từ phải in hoa
+    function String(string) {
+        let words = string.split(' ');
+        let get = words.map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase());
+        let change = get.join(' ');
+        return change;
+    }
+    function main() {
+        let input = prompt('Nhập xâu ký tự:');
+        console.log('Xâu trước khi chuẩn hóa:', input);
+        let normal = String(input);
+        console.log('Xâu sau khi chuẩn hóa:', normal);
+    }
+    main();
+</script>
+</body>
+</html>

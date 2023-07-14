@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+function number(arr){
+    let arr1=arr.sort(function (a,b){return b-a})// sắp xếp số từ lớn đến nhỏ
+    return arr1;
+}
+let arr=[1,4,2,5,23,6,7,23,522,9]
+console.log("mảng ban đầu : "+arr)
+console.log("mảng sắp xếp lớn đến nhỏ : "+number(arr).join())
+
+</script>
+</body>
+</html>
