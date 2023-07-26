@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let user1={
+        name:"phuc",
+        surname:"nhu",
+        age:18
+    }
+    let user2={
+        name:"tai",
+        surname:"nhu",
+        age:19
+    }
+    let user=[user1,user2]
+    let arr=[]
+    let arr1=[]
+    for (let i = 0; i <user.length ; i++) {
+        arr.push("surname : "+user[i].surname,"name : "+user[i].name)
+        arr1.push("age : "+user[i].age)
+    }
+    console.log(arr)
+    console.log(arr1)
+</script>
+</body>
+</html>

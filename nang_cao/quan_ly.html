@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="add()">Thêm Mới Học Viên</button>
+<button type="button" onclick="edit()">Chỉnh Sửa</button>
+<button type="button" onclick="deleTe()">Xóa</button>
+<p id="outPut"></p>
+<p id="result"></p>
+<script>
+    class Class {
+        constructor(CLASS,NAME,AGE,SEX) {
+            this.CLASS=CLASS;
+            this.NAME=NAME;
+            this.AGE=AGE;
+            this.SEX=SEX;
+        }
+        getClass(){
+            return this.CLASS;
+        }
+        getName(){
+            return this.NAME;
+        }
+        getAge(){
+            return this.AGE;
+        }
+        getSex(){
+            return this.SEX;
+        }
+        setClass(Class){
+             this.CLASS=Class;
+        }
+        setName(Name){
+             this.NAME=Name;
+        }
+        setAge(Age){
+             this.AGE=Age;
+        }
+        setSex(Sex){
+             this.SEX=Sex;
+        }
+    }
+    let string1=new Class("a01","NguyễnVănA",18,"Nam")
+    let string2=new Class("a02","NguyễnThịB",20,"Nữ")
+    let string3=new Class("a03","NguyễnThịC",19,"Nữ")
+    let sum=[]
+    sum.push(string1,string2,string3)
+    play(sum)
+    function play(sum){
+        let table='<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>CLASS</th>\n' +
+            '        <th>NAME</th>\n' +
+            '        <th>AGE</th>\n' +
+            '        <th>SEX</th>\n' +
+            '    </tr>'
+        for (let i = 0; i <sum.length ; i++) {
+            table+=' <tr>\n' +
+                '        <th>'+sum[i].getClass()+'</th>\n' +
+                '        <th>'+sum[i].getName()+'</th>\n' +
+                '        <th>'+sum[i].getAge()+'</th>\n' +
+                '        <th>'+sum[i].getSex()+'</th>\n' +
+                '    </tr>'
+        }
+        table+='<table>'
+        document.getElementById("result").innerHTML=table;
+    }
+    function add(){
+        document.getElementById("outPut").innerHTML=
+            '<input  type="text" placeholder="Add Name" id="d">\n' +
+            '<input  type="text" placeholder="Add Name" id="e">\n' +
+            '<input type="text" placeholder="Add Name" id="g">\n' +
+            '<input  type="text" placeholder="Add Name" id="h">\n' +
+            '<button onclick="add1()">add</button>'
+    }
+    function add1(){
+        let d=document.getElementById("d").value;
+        let e=document.getElementById("e").value;
+        let g=document.getElementById("g").value;
+        let h=document.getElementById("h").value;
+        if(d!==""&&e!==""&&g!==""&&h!==""){
+            let a=new Class(d,e,g,h)
+            sum.push(a)
+        }
+        play(sum)
+    }
+    let index=0
+    function edit(){
+        let a=prompt("Nhập lớp cần chỉnh sửa!")
+        for (let i = 0; i <sum.length ; i++) {
+            if(a===sum[i].getClass()){
+                index=i
+                document.getElementById("outPut").innerHTML=
+                    '<input  type="text" placeholder="Add Name" id="d">\n' +
+                    '<input  type="text" placeholder="Add Name" id="e">\n' +
+                    '<input type="text" placeholder="Add Name" id="g">\n' +
+                    '<input  type="text" placeholder="Add Name" id="h">\n'+
+                    '<input type="button" value="edit" onclick="edit1()">'
+            }
+        }
+    }
+    function edit1(){
+        let d=document.getElementById("d").value;
+        let e=document.getElementById("e").value;
+        let g=document.getElementById("g").value;
+        let h=document.getElementById("h").value;
+            if(d&&e&&g&&h !==""){
+                sum[index].setClass(d);
+                sum[index].setName(e);
+                sum[index].setAge(g);
+                sum[index].setSex(h);
+        }
+        play(sum)
+    }
+    function deleTe(){
+        let a=prompt("Nhập tên cần xóa!")
+        for (let i = 0; i <sum.length ; i++) {
+            let cof=confirm("bạn chắc chắn muốn xóa học viên này?")
+            if(sum[i].getName()===a&&cof){
+                sum.splice(i,1)
+            }
+        }
+        play(sum)
+    }
+
+</script>
+</body>
+</html>

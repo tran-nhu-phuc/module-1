@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    #num1,#num2,#num3,#num4,#num5{
+        width: 200px;
+    }
+</style>
+<body>
+<input type="button" value="Thêm mới học viên" id="enter1">
+<input type="button" value="Sửa thông tin học viên" id="enter2">
+<input type="button" value="Xóa học viên" id="enter3">
+<p id="result1"></p>
+<p id="result"></p>
+<script>
+class list{
+        constructor(MHV,NAME,CLASS,EMAIL,BIRT) {
+            this.MHV=MHV;
+            this.NAME=NAME;
+            this.CLASS=CLASS;
+            this.EMAIL=EMAIL;
+            this.BIRT=BIRT;
+        }
+        getMHV(){
+            return this.MHV
+        }
+        getNAME(){
+        return this.NAME
+        }
+        getCLASS(){
+        return this.CLASS
+        }
+        getEMAIL(){
+        return this.EMAIL
+        }
+        getBIRT(){
+        return this.BIRT
+        }
+    setMHV(mhv){
+            this.MHV=mhv;
+    }
+    setNAME(name){
+        this.NAME=name;
+    }
+    setCLASS(lop){
+        this.CLASS=lop;
+    }
+    setEMAIL(email){
+        this.EMAIL=email;
+    }
+    setBIRT(birt){
+        this.BIRT=birt;
+    }
+
+}
+let product=[]
+let list1=new list("HV-0001","NguyễnVănA","C1022G1","nguyvana@gmail.com","01/01/2004")
+let list2=new list("HV-0002","NguyễnVănB","C1022G1","nguyvana@gmail.com","01/01/2004")
+let list3=new list("HV-0003","NguyễnVănC","C1022G1","nguyvana@gmail.com","01/01/2004")
+product.push(list1,list2,list3)
+display(product)
+    function display(list){
+        let table='<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>Mã học viên</th>\n' +
+            '        <th>Tên </th>\n' +
+            '        <th>Lớp</th>\n' +
+            '        <th>Email</th>\n' +
+            '        <th>Ngày sinh</th>\n' +
+            '    </tr>'
+        for (let i = 0; i <list.length ; i++) {
+            table+=' <tr>\n' +
+                '        <th>'+list[i].getMHV()+'</th>\n' +
+                '        <th>'+list[i].getNAME()+'</th>\n' +
+                '        <th>'+list[i].getCLASS()+'</th>\n' +
+                '        <th>'+list[i].getEMAIL()+'</th>\n' +
+                '        <th>'+list[i].getBIRT()+'</th>\n' +
+                '    </tr>'
+        }
+        table+='</table>'
+        document.getElementById("result").innerHTML=table;
+    }
+    let enter1=document.getElementById("enter1");
+    let enter2=document.getElementById("enter2");
+    let enter3=document.getElementById("enter3");
+    enter1.onclick=function (){
+        document.getElementById("result1").innerHTML=
+            '<input placeholder="Mã Học Viên" size="10" id="num1" >\n' +
+            '<input placeholder="Tên" size="10" id="num2">\n' +
+            '<input placeholder="Lớp" size="10" id="num3">\n' +
+            '<input placeholder="Email" size="10" id="num4">\n' +
+            '<input placeholder="Ngày Sinh" size="10" id="num5">'+
+            '<button onclick="add()">new add</button>'
+    }
+    let id=-1
+    enter2.onclick=function (){
+        let a=prompt("Nhập mã học viên cần edit!")
+        for (let i = 0; i <product.length ; i++) {
+            if(a===product[i].getMHV()){
+                document.getElementById("result1").innerHTML =
+                    '<input  size="15" id="num1" value='+product[i].getMHV()+' >\n' +
+                    '<input  size="15" id="num2" value='+product[i].getNAME()+'>\n' +
+                    '<input  size="15" id="num3" value='+product[i].getCLASS()+'>\n' +
+                    '<input  size="15" id="num4" value='+product[i].getEMAIL()+'>\n' +
+                    '<input  size="15" id="num5" value='+product[i].getBIRT()+'>'+
+                        '<button onclick="edit()">edit</button>'
+                id=i
+            }
+        }
+    }
+    enter3.onclick=function (){
+        let a=prompt("Nhập mã học viên cần xóa!")
+        for (let i = 0; i <product.length ; i++) {
+            if(a===product[i].getMHV()) {
+                let c=confirm(product[i].getNAME())
+                if(c) {
+                    product.splice(i, 1)
+                }
+            }
+        }
+        display(product)
+    }
+    function add(){
+        let input1=document.getElementById("num1").value;
+        let input2=document.getElementById("num2").value;
+        let input3=document.getElementById("num3").value;
+        let input4=document.getElementById("num4").value;
+        let input5=document.getElementById("num5").value;
+        let Product= new list(input1,input2,input3,input4,input5)
+        if(input1&&input2&&input3&&input4&&input5 !==  ""){
+            product.push(Product)
+        }else{
+            alert("please fill up this")
+        }
+        display(product)
+    }
+    function edit(){
+        let input1 = document.getElementById("num1").value;
+        let input2 = document.getElementById("num2").value;
+        let input3 = document.getElementById("num3").value;
+        let input4 = document.getElementById("num4").value;
+        let input5 = document.getElementById("num5").value;
+        if(input1!==""){
+            product[id].setMHV(input1);
+        }else{
+            product[id].getMHV()
+        }
+        if(input2!==""){
+            product[id].setNAME(input2);
+        }else{
+            product[id].getNAME()
+        }
+        if(input3!==""){
+            product[id].setCLASS(input3);
+        }else{
+            product[id].getCLASS()
+        }
+        if(input4!==""){
+            product[id].setEMAIL(input4);
+        }else{
+            product[id].getEMAIL()
+        }
+        if(input5!==""){
+            product[id].setBIRT(input5);
+        }else{
+            product[id].getBIRT()
+        }
+        display(product)
+    }
+</script>
+</body>
+</html>

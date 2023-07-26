@@ -13,12 +13,12 @@
     let arr4=[]
     for (let i = 0; i <arr.length ; i++) {
         if(!arr3.includes(arr[i])){
-            arr4.push(arr[i])
-        }else{
             arr3.push(arr[i])
+        }else{
+            arr4.push(arr[i])
         }
     }
-console.log(arr3)
+console.log("Ký tự giống nhau : "+arr4.join(""))
 </script>
 </body>
 </html>

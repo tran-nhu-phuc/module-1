@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<textarea type="text" rows="20" cols="60" id="result" onkeydown="phuc()"></textarea>
+<script>
+    let a =new Array(),n="";
+    a[1]="T"; a[2] = "R" ;a[3]="A";a[4]="N";a[5]=" ";a[6]="N"; a[7]= "H";a[8]="U";a[9]=" "; a[10]= "P";a[11]="H"
+    ;a[12]="U";a[13]="C";a[14]="!";
+    function phuc(){
+        let b=document.getElementById("result").value;
+        let c=b.length
+        if(c>0) {
+            for (let i = 1; i <= c; i++) {
+                n = n + a[i]
+                if (i === 15) {
+                    document.getElementById("result").value = "";
+                    n = "";
+                }
+            }
+        }
+        document.getElementById("result").value=n;
+        n="";
+        setTimeout("phuc()",0.1)
+    }
+</script>
+</body>
+</html>
